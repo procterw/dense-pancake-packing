@@ -6,6 +6,7 @@ const init = () => {
     .map(String);
 
   const charts = d3.select('#charts')
+    .selectAll('div')
     .data(nPancakeArr)
     .enter()
     .append('div')
@@ -17,9 +18,6 @@ const init = () => {
   charts.each(function(d) {
     PancakeAreaChart(d3.select(this), d);
   });
-
-  // PancakeAreaChart(d3.select('#charts'), "8");
-
 };
 
 init();

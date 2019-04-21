@@ -27,28 +27,30 @@ export const PancakeAreaChart = (selection, nPancakes) => {
       
     const pan = svg.append("g")
       .append("circle")
-      .attr("fill", "#0a3d62")
-      .attr("stroke", "black")
+      .attr("fill", "#596275")
+      .attr("stroke", "#303952")
       .attr("stroke-width", 8)
       .attr("cx", WIDTH / 2)
       .attr("cy", HEIGHT / 2)
-      .attr("r", PAN_RADIUS + 5);
+      .attr("r", PAN_RADIUS + 8);
 
     const node = svg.append("g")
       .selectAll("circle")
       .data(nodes)
       .join("circle")
-      .attr("r", getPKRadius(nPancakes))
-      .attr("fill", '#ffeaa7')
+      .attr("r", getPKRadius(nPancakes) - 3)
+      .attr("fill", '#f7d794')
+      .attr("stroke", "#f5cd79")
+      .attr("stroke-width", 5)
       .call(drag(simulation));
 
     const link = svg.append("g")
-      .attr("stroke", "black")
-      .attr("stroke-opacity", 0.2)
       .selectAll("line")
       .data(links)
       .join("line")
-      .attr("stroke-width", 2);
+      .attr("stroke-width", 2)
+      .attr("stroke", "white")
+      .attr("stroke-opacity", d => d.weak ? 0.4 : 1);
 
     simulation.on("tick", () => {
       link
