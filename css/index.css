@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  border-top: 6px solid #74b9ff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#content {
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+h2 {
+  border-bottom: 6px solid #a29bfe;
+  display: inline-block;
+  padding-bottom: -5px;
+}
+
+.chart {
+  display: inline-block;
+}
+
+h4 {
+  margin: 0;
+  font-weight: 300;
+  font-family: monospace;
+}
